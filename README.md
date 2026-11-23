@@ -22,6 +22,8 @@
 
 ## 安装与运行
 
+### Windows 桌面程序
+
 需要 Windows 64 位和 Python 3.12。将仓库克隆到可写目录，在仓库根目录运行：
 
     py -3.12 -m venv 运行环境
@@ -36,6 +38,29 @@
     .\运行环境\Scripts\python.exe .\工具\memotrace_local.py export --chat "会话名称"
     .\运行环境\Scripts\python.exe .\工具\memotrace_local.py members --chat "群名称"
     .\运行环境\Scripts\python.exe .\工具\test_recovery.py
+
+### Linux 群聊记录导出
+
+Linux 工具从**已登录的官方微信客户端**读取指定群的本地聊天记录。实测环境为 Ubuntu 24.04 x86_64、Linux 微信 4.1.13.29、X11 桌面、英文界面、浅色主题和 100% 缩放。
+
+1. 在带窗口管理器的 X11 桌面中启动微信并扫码登录。登录账号需已加入目标群。首次触发批量复制时，按微信界面确认使用提示。
+2. 安装 Linux 脚本的依赖：
+
+   ```bash
+   sudo apt-get install python3 python3-pil tzdata wmctrl xdotool x11-utils xclip imagemagick tesseract-ocr tesseract-ocr-eng
+   ```
+
+3. 用该桌面的用户身份运行。命令默认导出北京时间的前一个自然日：
+
+   ```bash
+   DISPLAY=:0 python3 "工具/linux_wechat_history.py" --group "Team Chat" > chat-history.json
+   ```
+
+可用 `--today` 查看当天已同步的记录，或用 `--date YYYY-MM-DD` 指定日期。`--timezone` 设置报表时区，`--source-timezone` 可指定微信窗口显示的时区，默认使用 Linux 系统时区。群名包含简体中文时，可安装 `tesseract-ocr-chi-sim` 并加上 `--ocr-language eng+chi_sim`。
+
+脚本核对群聊记录窗口的标题，使用 OCR 定位控件和日期边界，再通过微信的批量复制读取发送人、时间和正文。复制出的条数须与选中的条数一致。JSON 的 `records` 包含发送人、带时区的时间和报表文本，图片等媒体保留类型，常见邮箱和访问凭证会被遮盖。
+
+结果覆盖此客户端已同步的记录。运行期间脚本会使用窗口焦点和剪贴板，并在读取后清空剪贴板。建议在专用桌面会话中运行，导出的 JSON 应按聊天记录管理。
 
 ## 代码入口和适用范围
 
