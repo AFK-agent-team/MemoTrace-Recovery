@@ -1,19 +1,94 @@
-# 参与 MemoTrace-Recovery
+# Contributing
 
-欢迎报告 bug、讨论功能和提出贡献方案。先搜索已有讨论和 PR。如果已有相关修复，欢迎试用并补充实际结果。如果问题在新版本已修复，请注明验证过的版本。报告、建议和提案统一在 GitHub Discussions 交流。 [进入 Discussions](https://github.com/AFK-agent-team/MemoTrace-Recovery/discussions)
+MemoTrace-Recovery is built for people who browse, recover, and export their own WeChat
+chat history. A small team maintains the project. Public pull requests are for bug fixes.
 
-## 报告 bug
+Start with a specific bug you have encountered in daily use. Bring new features,
+UI or architecture overhauls, and support for additional platforms to
+[Ideas discussions](https://github.com/AFK-agent-team/MemoTrace-Recovery/discussions/categories/ideas).
 
-- 写明 MemoTrace 版本或 commit、操作系统和微信版本。
-- 提供最短复现步骤，写出预期结果和实际结果。
-- 说明影响，例如是否阻止导出、是否可以重试，以及问题出现的频率。可附脱敏日志、截图或最小样例。
+## The best way to help
 
-## 提交 bug 修复
+Help us find things we can close.
 
-1. 每个 PR 修复一个可复现的 bug，包含修复所需的测试和文档。明显的小修可直接提 PR。较大的修复先在 Discussions 记录复现，再在 PR 里链接该讨论。
-2. 完成本地验证，写出实际运行的命令或操作、观察结果和未覆盖的环境。界面改动附前后截图，涉及交互或时序时附短录屏。把证据上传到 PR。 [项目 `/verify`](.agents/skills/verify/SKILL.md)
-3. 用 PR 模板说明问题、修复范围和验证结果。使用代理撰写代码时，注明代理和实际撰写代码的模型。Gemini 撰写的代码只接受 Gemini 4 Neon，Gemini 模型可用于审查。 [PR 模板](.github/pull_request_template.md)
+- **Duplicates.** Comment with a link to the original discussion or PR.
+- **Fixed bugs.** If a reported bug no longer happens on the latest release, say so and give the version.
+- **Dead PRs.** If a PR is superseded or abandoned, link what replaced it.
 
-## 功能提案和日常维护
+A +1 on an existing PR is ALWAYS better than another PR. Search the open PRs before you start. If one
+covers your bug, react to it, test it, and comment with what you saw.
 
-功能提案请写出使用场景、现有流程遇到的问题和期望结果。七位受信任协作者完成本地 `/verify` 后，将日常维护和功能改动直接 commit 并推送到 `main`。 [仓库维护规则](AGENTS.md)
+Report bugs in [Bug reports](https://github.com/AFK-agent-team/MemoTrace-Recovery/discussions/categories/bug-reports). Put feature requests and contribution proposals in
+[Ideas discussions](https://github.com/AFK-agent-team/MemoTrace-Recovery/discussions/categories/ideas). Ask usage questions in [Q&A](https://github.com/AFK-agent-team/MemoTrace-Recovery/discussions/categories/q-a).
+
+## Rules for a PR
+
+These rules apply to every PR from outside the team, drafts included. The seven trusted
+maintainers commit and push to `main` after local verification. See the [repository rules](AGENTS.md).
+
+<a id="prior-approval"></a>
+
+### Fix a bug
+
+A PR must fix a bug. A crash, a regression, and a real performance problem are bugs.
+Proposals to change the intended behavior belong in Ideas.
+
+A small fix for an obvious bug can go directly to a PR. For a larger fix, link the
+Discussion that shows the bug.
+
+<a id="one-problem"></a>
+
+### One problem per PR
+
+Fix one problem. Include every change that fix needs across the client, recovery tools,
+tests, and docs. Keep cleanup, refactors, and a second fix in separate changes.
+
+<a id="verification"></a>
+
+### Show that it works
+
+Run the [project `/verify`](.agents/skills/verify/SKILL.md). Say how you found the bug, how you checked
+it, and what you saw. Include the commands or steps, the results, and any environment you could not check.
+
+UI changes need before and after screenshots. Add a short video when the change is about motion or
+timing. Upload the evidence to the PR.
+
+<a id="models"></a>
+
+### Models we do not accept
+
+Gemini 4 Neon is the accepted Gemini model for writing contribution code. Gemini models
+may review code. If you used an agent to write the patch, name the model and harness.
+
+<a id="open-pr-limit"></a>
+
+### 3 open PRs per person
+
+You can have 3 open PRs. Maintainers close a fourth when you open it. Get one merged or closed,
+then open it again.
+
+<a id="conflict-window"></a>
+
+### Keep your PR mergeable
+
+Maintainers label a PR that conflicts with its base branch `needs-rebase`. If it still conflicts
+after 7 days with no activity, they close it.
+
+## Bans
+
+Maintainers may block accounts for automated spam, repeated pings, arguing after a
+closure, or using another account to get around a limit.
+
+<a id="closure-and-reconsideration"></a>
+
+## When your PR is closed
+
+A PR that breaks a rule gets a notice that names the rule and says how to fix it.
+Maintainers close it 72 hours later. A reply or a push in that time sends it back for another look.
+
+After it is closed, fix the problem and comment on the PR, or open a focused replacement PR that links
+the old one.
+
+## Setup
+
+See [installation and running](README.md#安装与运行).

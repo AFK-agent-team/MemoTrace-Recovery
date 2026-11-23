@@ -31,3 +31,7 @@ APSW 提供 SQLite 的 Python 接口及自定义 VFS。使用其公开 API 构�
 https://rogerbinns.github.io/apsw/vfs.html
 
 Python 依赖各自的许可证保留在“运行环境/Lib/site-packages”中。
+
+## T3 Code
+
+贡献指南、PR 模板和 bug 讨论表单基于 T3 Code 的 MIT 授权文件，版权归 T3 Tools Inc. 所有。 [上游版本](https://github.com/pingdotgg/t3code/tree/d63b9c4c76384c447ded5ff791ebb9dde25ec5f3) · [MIT 许可证](LICENSES/t3code-MIT.txt)

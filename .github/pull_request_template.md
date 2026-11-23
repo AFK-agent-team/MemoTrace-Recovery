@@ -1,15 +1,32 @@
-## 问题
+<!--
+Read CONTRIBUTING.md before opening a PR. Review capacity is limited, and meeting
+the requirements does not guarantee review or merging. Solve one underlying problem.
+The same requirements apply to drafts. Draft status does not defer triage or closure.
+Use a conventional commit title in plain language, such as "fix(linux): export messages for the selected day".
+-->
 
-<!-- 写明版本、环境和最短复现步骤。记录预期结果与实际结果，并附上已有的 Discussion。较大的修复需要 Discussion 链接。 -->
+## Problem
 
-## 修复范围
+<!-- Explain the problem in a sentence or two. Include expected behavior and
+reproduction steps or environment where relevant. -->
 
-<!-- 说明改动怎样修复这个 bug，以及不同组件为什么需要一起变更。 -->
+## Change
 
-## 验证结果
+<!-- Explain how this fixes the problem. If it spans components or clients,
+explain why those changes are needed for the same fix. Split independent fixes. -->
 
-<!-- 写出项目 /verify 中实际运行的命令或操作、观察结果，以及未覆盖的环境。界面改动附前后截图，交互或时序改动附短录屏。请把验证附件上传到 PR。 -->
+## Scope
 
-## 代理和模型
+<!-- Link the Discussion that shows the bug. For a small fix of an obvious bug,
+include the reproduction steps here. -->
 
-<!-- 使用代理撰写代码时，填写代理和实际写代码的模型。审查所用模型可另行注明。 -->
+## Verification
+
+<!-- Use the project /verify. Describe the focused tests or manual checks you ran,
+the observed results, and anything you could not check.
+
+For UI changes, include clear before/after screenshots. Include a short recording
+when motion, timing, transitions, or interaction details are needed to demonstrate
+the change. Upload evidence to GitHub and embed or link it here. -->
+
+<!-- If you used an agent, end with the model and harness that did the work. -->
