@@ -1,0 +1,6 @@
+{
+  "wechat_exe": "C:/Program Files/Tencent/Weixin/Weixin.exe",
+  "account_dir": "C:/path/to/xwechat_files/your_account_folder",
+  "self_username": "",
+  "default_chat": ""
+}
